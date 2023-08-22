@@ -1,0 +1,68 @@
+:root {
+    /* --light-black: #191a1e;
+    --black: #121317;
+    --text-color: #03050a77;
+    --txt-color-gray: rgb(202, 202, 202);
+    --txt-color-gray-light: rgb(156, 156, 156);
+    --border: #212226;
+    --white: #fff;
+    --blue: #1594e9;
+    --blue-hover: #0a85d6;
+    --padding: 40px;
+    --border-radius: 12px;
+    --font: Poppins;
+    --ligh-blue: #0f43ef0e;
+    --border-bottom: rgba(0, 0, 0, 0.048) ;
+
+    --input-form-color: #212226;
+    --super-light-gray: rgba(46, 46, 56, 0.651); */
+
+    /* --box-shadow: rgba(0, 0, 0, 0.048) 0px 4px 6px -1px, rgba(0, 0, 0, 0.007) 0px 2px 4px -1px; */
+    ;
+}
+
+
+div#ui-datepicker-div
+{
+    background-color: var(--black) !important;
+    /* border: none !important; */
+    padding: 12px  !important;
+    border: 1px solid var(--border) !important;
+    width: max-content !important;
+}
+
+.ui-datepicker-calendar tr{
+    background-color: transparent !important;
+}
+
+a.ui-state-default{
+
+    background-color: transparent !important;
+    border: none !important;
+    padding: 10px !important;
+    text-align: center !important;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next
+{
+    position: absolute;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    color: white !important;
+    font-size: 12px Imp !important;
+}
+
+.ui-datepicker th
+{
+    color: white !important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover
+{
+    background-color: var(--blue-hover) !important;
+}
+
+.ui-state-default:hover{
+    background-color: var(--light-black) !important;
+}

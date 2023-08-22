@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+    # rewrite engine settings:
+    RewriteEngine On
+    RewriteBase /
+
+    # Exclude existing files and directories from rewriting
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite URL with custom parameters
+    RewriteRule ^admin$ index.php?admin [NC,QSA,L]
+
+    
+</IfModule>

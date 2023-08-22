@@ -1,0 +1,47 @@
+<!-- Tab content -->
+                                <div class="tab-content image_media" id="tab1">
+                                    <!-- Content for Tab 1 goes here -->
+                                    <div class="image_library_container">
+                                        <?php
+
+                                        $media = new Media();
+                                        $media_file = $media->select_media();
+
+                                        $image_box = " ";
+
+
+                                        for ($i = 0; $i < count($media_file); $i++) {
+                                            $image_box .=
+                                                "
+                                            <div class='img_box'>
+
+                                                <div class='img_wrapper_box'>
+                                                    <img class='img_sub_box' src='files/" . $media_file[$i]['media_name'] . "' />
+                                                </div>
+
+                                                <input type='checkbox' value='" . $media_file[$i]['media_name'] . "'>
+                                                
+                                            </div>
+                                        ";
+
+                                            $image_box .=
+                                                "
+                                        <div class='img_box'>
+
+                                            <div class='img_wrapper_box'>
+                                                <img class='img_sub_box' src='files/" . $media_file[$i]['media_name'] . "' />
+                                            </div>
+
+                                            <input type='checkbox' value='" . $media_file[$i]['media_name'] . "'>
+                                            
+                                        </div>
+                                    ";
+                                        }
+
+                                        print $image_box;
+
+                                        ?>
+                                    </div>
+
+
+                                </div>

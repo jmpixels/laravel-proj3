@@ -1,0 +1,89 @@
+<div id="customPopup" class="custom-popup">
+                    <div id="Popup-wrapper" class="popup-content">
+                        <div class="top-wrapper pop">
+                            <button id="closeButton">Close</button>
+                        </div>
+
+                        <!-- Your popup content goes here -->
+                        <h3 class="heading-text">Image Library</h3>
+
+
+                        <div class="popup_wrapper">
+                            <!-- Tab navigation -->
+                            <div class="tab-wrapper">
+                                <button class="tab-button active" data-tab="tab1">Media Library</button>
+                                <button class="tab-button" data-tab="tab2">Upload Images</button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="tab-content img_library" id="tab1">
+                            <!-- Content for Tab 2 goes here -->
+                            <div class="img_library_wrapper">
+
+                                <div class="img_sub_wrapper" id="imageBoxContainer">
+                                    <?php
+
+                                    $media = new Media();
+                                    $media_file = $media->select_media();
+
+                                    $image_box = " ";
+
+                                    for ($i = 0; $i < count($media_file); $i++) {
+                                        $image_box .=
+                                            "
+                                            <div class='img_box'>
+
+                                                <div class='img_wrapper_box'>
+                                                    <img class='img_sub_box' src='files/" . $media_file[$i]['media_name'] . "' />
+                                                </div>
+
+                                                <input type='checkbox' value='" . $media_file[$i]['media_name'] . "'>
+                                                
+                                            </div>
+                                        ";
+                                    }
+
+                                    print $image_box;
+
+                                    ?>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="tab-content" id="tab2">
+                            <!-- Content for Tab 2 goes here -->
+                            <?php
+                            $form_upload = new MultiImage();
+                            print $form_upload->upload_images_form();
+                            ?>
+
+
+                        </div>
+                        <script>
+                            function onSubmitSuccess() {
+                                // You can perform any additional actions here before the page is refreshed (if needed).
+                                // For example, you might want to display a success message to the user.
+
+                                // Refresh the page after 1 second (1000 milliseconds)
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 1000);
+
+                                // Return false to prevent the form from being submitted through regular HTTP request
+                                return false;
+                            }
+                        </script>
+
+                    </div>
+                </div>
+
+                    <button type="button" class="btn" id="popupButton">Set a Thumbnail</button><br>
+
